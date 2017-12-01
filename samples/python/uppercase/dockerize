@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex 
+set -ex
 
 cd "$(dirname "$0")"
 if [ -e proto ]; then
@@ -8,6 +8,6 @@ if [ -e proto ]; then
 fi
 mkdir proto
 
-cp ../../../../function-proto/src/main/proto/*.proto proto
+cp ../../../function-proto/src/main/proto/*.proto proto
 
 docker build . --rm -t projectriff/grpc-py:v0001
