@@ -56,6 +56,15 @@ Run the following command to see that the `riff` chart is available:
 helm search riff
 ----
 
+==== To start from scratch, tear it all down, in case there is an existing installation
+
+[source, bash]
+----
+helm delete demo --purge
+----
+
+
+
 ==== Install riff on MiniKube
 
 For `NodePort` service types (e.g. running on Minikube) configure the httpGateway to use `NodePort`:
@@ -72,15 +81,6 @@ You should see a number of resources get created in your cluster. You can see th
 ----
 kubectl get svc,deployments,pods,functions,topics
 ----
-
-
-==== To tear it all down
-
-[source, bash]
-----
-helm delete demo --purge
-----
-
 
 == [[samples]]Labs
 
