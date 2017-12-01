@@ -9,13 +9,8 @@ After completing this lab, you will be familiar with the following features:
 * **Polyglot**: How to deploy functions written in Java, NodeJS, Python and Shell. Said functions can support HTTP, gRPC or stdio
 * **Event streaming**: How to pubish messages to `riff's` Kafka broker from the outside world
 
-== Installation
-
-This helm chart deploys `riff` and its required services to a Kubernetes Cluster.
-
-==== Prerequisites
-
-* A running 1.7+ Kubernetes cluster
+== Initial setup: Do this only once
+==== Start Minikube
 
 CAUTION: There have been some DNS issues reported for Minikube v0.24, we suggest using v0.23 until this has been resolved
 
@@ -26,7 +21,7 @@ For Minikube, we recommend at least 4GB of memory:
 minikube start --memory=4096
 ----
 
-==== Install Helm
+==== Initialize Helm
 
 Helm is comprised of 2 components: one is the client (helm) the other is the server component (tiller). The helm client runs on your local machine and can be installed using the instructions found https://github.com/kubernetes/helm/blob/master/README.md#install[here]
 
@@ -38,6 +33,11 @@ helm init
 ----
 
 NOTE: To verify that the tiller pod has started execute the following command: `kubectl get pod --namespace kube-system -l app=helm` and you should see the `tiller` pod running.
+
+
+== Install `riff's` Helm Chart
+
+This helm chart deploys `riff` and its required services to a Kubernetes Cluster.
 
 ===== Add the riff repository to your helm environment
 
