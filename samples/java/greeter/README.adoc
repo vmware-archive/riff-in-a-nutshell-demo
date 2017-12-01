@@ -1,5 +1,7 @@
 = greeter
 
+Click on the link below to view the function code:
+
 [horizontal]
 *Language*:: Java
 *Function*:: https://github.com/projectriff/riff/blob/master/samples/java/greeter/src/main/java/functions/Greeter.java[Greeter.java]
@@ -41,7 +43,7 @@ Here is link:greeter.yaml[the YAML file] that creates input and output topics as
 ```
 ./riff apply -f samples/java/greeter
 ```
-Switch to the **__monitoring window__** to check that the function(s) and topic(s) have been created
+Switch to the **__monitoring window__** to check that the deployment, function(s) and topic(s) have been created
 
 === Tail the Sidecar Log
 
