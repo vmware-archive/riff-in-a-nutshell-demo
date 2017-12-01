@@ -26,6 +26,7 @@ This allows you to start from scratch in case someone has already completed this
 Here is the supporting link:Dockerfile[Dockerfile]
 
 ```
+eval $(minikube docker-env)
 ./riff build -n square -v v0001 -f samples/node/square
 ```
 
