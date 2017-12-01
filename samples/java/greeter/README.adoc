@@ -7,6 +7,13 @@
 *Input*:: names
 *Output*:: greetings
 
+=== Delete the function
+This allows you to start from scratch in case someone has already completed this lab
+
+```
+./riff delete -n greeter
+```
+
 === Build the JAR
 
 ```
@@ -25,20 +32,21 @@ pushd samples/java/greeter/ ; ./mvnw clean package ; popd
 ./riff apply -f samples/java/greeter
 ```
 
+=== Tail the Sidecar Log
+
+```
+while sleep 1; do ./riff logs -n greeter -t; done
+```
+
 === Publish a Message
 
 ```
 ./publish names World
 ```
 
-=== Tail the Sidecar Log
+=== Publish 50 Messages
 
 ```
-./riff logs -n greeter -t
+./publish names World 50
 ```
 
-=== Delete the function
-
-```
-./riff delete -n greeter
-```
