@@ -1,37 +1,52 @@
 = square
 
+Click on the link below to view the function code:
+
 [horizontal]
 *Language*:: JavaScript
 *Function*:: https://github.com/projectriff/riff/blob/master/samples/node/square/square.js[square.js]
 *Protocol*:: HTTP
 *Input*:: numbers
 
+=== Monitor details of `riff's` functions, topics and pods in `minikube`
+Open new shell window or tab and execute this command. We will refer to this as the **__monitoring window__**
+
+[source, bash]
+----
+watch kubectl get deployments,pods,functions,topics
+----
+
+=== Delete the function
+This allows you to start from scratch in case someone has already completed this lab
+```
+./riff delete -n square
+```
+
 === Build the Docker container for the function code
+Here is the supporting link:Dockerfile[Dockerfile]
 
 ```
 ./riff build -n square -v v0001 -f samples/node/square
 ```
 
 === Create the Function and Topic(s)
+Here is link:square.yaml[the YAML file] that creates input and output topics as well as the function
 
 ```
 ./riff apply -f samples/node/square
 ```
-
-=== Publish a Message
-
-```
-./request numbers 2
-```
+Switch to the **__monitoring window__** to check that the deployment, function(s) and topic(s) have been created
 
 === Tail the Sidecar Log
 
 ```
-./riff logs -n square -t
+while sleep 1; do ./riff logs -n square -t; done
 ```
 
-=== Delete the function
+=== Publish a Message
+Open new shell window or tab and execute this command:
 
 ```
-./riff delete -n square
+./request numbers 2
 ```
+Switch to the **__monitoring window__** to check that `square`-based pod(s) have been created
