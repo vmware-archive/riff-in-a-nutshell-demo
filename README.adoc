@@ -72,7 +72,13 @@ helm search riff
 helm delete demo --purge
 ----
 
+==== Monitor the installation
+Get ready to monitor the `riff` resources that will get created in your cluster. You can see them all using:
 
+[source, bash]
+----
+watch kubectl get svc,deployments,pods,functions,topics
+----
 
 ==== Install riff on MiniKube
 
@@ -83,13 +89,6 @@ For `NodePort` service types (e.g. running on Minikube) configure the httpGatewa
 helm install riffrepo/riff --name demo --set httpGateway.service.type=NodePort
 ----
 
-===== Verify the installation
-You should see a number of resources get created in your cluster. You can see them all using:
-
-[source, bash]
-----
-kubectl get svc,deployments,pods,functions,topics
-----
 
 == [[samples]]Labs
 
