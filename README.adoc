@@ -87,9 +87,9 @@ kubectl get svc,deployments,pods,functions,topics
 Once you get `riff` running, you can try one or more of the following functions:
 
 * HTTP
-  - link:java/greeter/README.adoc[greeter: Java function]
-  - link:node/square/README.adoc[square: NodeJS function]
+  - link:samples/java/greeter/README.adoc[greeter: Java function]
+  - link:samples/node/square/README.adoc[square: NodeJS function]
 * gRPC
-  - link:python/uppercase/README.adoc[uppercase: Python function]
+  - link:samples/python/uppercase/README.adoc[uppercase: Python function]
 * stdio
-  - link:shell/echo/README.adoc[echo: Shell function]
+  - link:samples/shell/echo/README.adoc[echo: Shell function]
