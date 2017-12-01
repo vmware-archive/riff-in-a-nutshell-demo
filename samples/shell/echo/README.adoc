@@ -1,0 +1,37 @@
+= echo
+
+[horizontal]
+*Language*:: Shell
+*Function*:: https://github.com/projectriff/riff/blob/master/samples/shell/echo/echo.sh[echo.sh]
+*Protocol*:: stdio
+*Input*:: greetings
+
+=== Build the Docker container for the function code
+
+```
+./riff build -n echo -v v0001 -f samples/shell/echo
+```
+
+=== Create the Function and Topic(s)
+
+```
+./riff apply -f samples/shell/echo
+```
+
+=== Publish a Message to the Input Topic
+
+```
+./publish greetings hello
+```
+
+=== Tail the Sidecar Log
+
+```
+./riff logs -n echo -t
+```
+
+=== Delete the function
+
+```
+./riff delete -n echo
+```

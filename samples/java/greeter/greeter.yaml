@@ -1,0 +1,22 @@
+apiVersion: projectriff.io/v1
+kind: Topic
+metadata:
+  name: names
+---
+
+apiVersion: projectriff.io/v1
+kind: Topic
+metadata:
+  name: greetings
+---
+
+apiVersion: projectriff.io/v1
+kind: Function
+metadata:
+  name: greeter
+spec:
+  protocol: http
+  input: names
+  output: greetings
+  container:
+    image: projectriff/greeter:v0001

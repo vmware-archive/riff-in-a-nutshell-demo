@@ -1,0 +1,37 @@
+= square
+
+[horizontal]
+*Language*:: JavaScript
+*Function*:: https://github.com/projectriff/riff/blob/master/samples/node/square/square.js[square.js]
+*Protocol*:: HTTP
+*Input*:: numbers
+
+=== Build the Docker container for the function code
+
+```
+./riff build -n square -v v0001 -f samples/node/square
+```
+
+=== Create the Function and Topic(s)
+
+```
+./riff apply -f samples/node/square
+```
+
+=== Publish a Message
+
+```
+./request numbers 2
+```
+
+=== Tail the Sidecar Log
+
+```
+./riff logs -n square -t
+```
+
+=== Delete the function
+
+```
+./riff delete -n square
+```

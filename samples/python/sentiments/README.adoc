@@ -1,0 +1,41 @@
+= sentiments
+
+[horizontal]
+*Language*:: Python
+*Function*:: https://github.com/projectriff/riff/blob/master/samples/python/sentiments/sentiment_service.py[sentiment_service.py]
+*Protocol*:: stdio
+*Input*:: tweets
+*Output*:: sentiments
+
+=== Build the Docker container for the function code
+
+```
+./riff build -n sentiments -v v0001 -f samples/python/sentiments
+```
+
+=== Create the Function and Topic(s)
+
+```
+./riff apply -f samples/python/sentiments
+```
+
+=== Publish a Message
+
+The function performs sentiment analysis on tweets. It accepts JSON and looks only at the `text` field. The input
+is in the form of an array (sorry about the escaped quotes).
+
+```
+./publish tweets "[{\"text\":\"happy happy happy\"},{\"text\":\"sad sad sad\"}]"
+```
+
+=== Tail the Sidecar Log
+
+```
+./riff logs -n sentiments -t
+```
+
+=== Delete the function
+
+```
+./riff delete -n sentiments
+```

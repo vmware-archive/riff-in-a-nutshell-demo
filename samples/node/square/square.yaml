@@ -1,0 +1,15 @@
+apiVersion: projectriff.io/v1
+kind: Topic
+metadata:
+  name: numbers
+---
+
+apiVersion: projectriff.io/v1
+kind: Function
+metadata:
+  name: square
+spec:
+  protocol: http
+  input: numbers
+  container:
+    image: projectriff/square:v0001

@@ -1,0 +1,44 @@
+= greeter
+
+[horizontal]
+*Language*:: Java
+*Function*:: https://github.com/projectriff/riff/blob/master/samples/java/greeter/src/main/java/functions/Greeter.java[Greeter.java]
+*Protocol*:: HTTP
+*Input*:: names
+*Output*:: greetings
+
+=== Build the JAR
+
+```
+pushd samples/java/greeter/ ; ./mvnw clean package ; popd
+```
+
+=== Build the Docker container for the function code
+
+```
+./riff build -n greeter -v v0001 -f samples/java/greeter
+```
+
+=== Create the Function and Topic(s)
+
+```
+./riff apply -f samples/java/greeter
+```
+
+=== Publish a Message
+
+```
+./publish names World
+```
+
+=== Tail the Sidecar Log
+
+```
+./riff logs -n greeter -t
+```
+
+=== Delete the function
+
+```
+./riff delete -n greeter
+```

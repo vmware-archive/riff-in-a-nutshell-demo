@@ -1,0 +1,18 @@
+apiVersion: projectriff.io/v1
+kind: Topic
+metadata:
+  name: greetings
+---
+
+apiVersion: projectriff.io/v1
+kind: Function
+metadata:
+  name: uppercase
+spec:
+  protocol: grpc
+  input: greetings
+  container:
+    image: projectriff/grpc-py:v0001
+    env:
+    - name: GRPC_PORT
+      value: 10382

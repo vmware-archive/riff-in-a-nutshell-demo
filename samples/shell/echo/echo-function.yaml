@@ -1,0 +1,9 @@
+apiVersion: projectriff.io/v1
+kind: Function
+metadata:
+  name: echo
+spec:
+  protocol: stdio
+  input: greetings
+  container:
+    image: projectriff/echo:v0001
