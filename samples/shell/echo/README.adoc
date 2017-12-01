@@ -1,22 +1,50 @@
 = echo
 
+Click on the link below to view the function code:
+
 [horizontal]
 *Language*:: Shell
 *Function*:: https://github.com/projectriff/riff/blob/master/samples/shell/echo/echo.sh[echo.sh]
 *Protocol*:: stdio
 *Input*:: greetings
 
-=== Build the Docker container for the function code
+=== Monitor details of `riff's` functions, topics and pods in `minikube`
+Open new shell window or tab and execute this command. We will refer to this as the **__monitoring window__**
+
+[source, bash]
+----
+watch kubectl get deployments,pods,functions,topics
+----
+
+=== Delete the function
+This allows you to start from scratch in case someone has already completed this lab
 
 ```
+./riff delete -n echo
+```
+
+=== Build the Docker container for the function code
+Here is the supporting link:Dockerfile[Dockerfile]
+
+```
+eval $(minikube docker-env)
 ./riff build -n echo -v v0001 -f samples/shell/echo
 ```
 
 === Create the Function and Topic(s)
+Here are link:echo-function.yaml[the function YAML file] and link:greetings-topic.yaml[the topic YAML file] that create the input topic as well as the function
 
 ```
 ./riff apply -f samples/shell/echo
 ```
+Switch to the **__monitoring window__** to check that the deployment, function(s) and topic(s) have been created
+
+=== Tail the Sidecar Log
+
+```
+while sleep 1; do ./riff logs -n echo -t; done
+```
+
 
 === Publish a Message to the Input Topic
 
@@ -24,14 +52,3 @@
 ./publish greetings hello
 ```
 
-=== Tail the Sidecar Log
-
-```
-./riff logs -n echo -t
-```
-
-=== Delete the function
-
-```
-./riff delete -n echo
-```
