@@ -1,6 +1,6 @@
 = riff is for functions
 
-As announced during Wednesday's keynote at SpringOne, `riff` provides developers with a service for executing Functions in response to Events. For more details, please see this presentation here link:README.adoc[<LINK TO BE PROVIDED AFTER WEDNESDAY KEYNOTE>]
+As announced during ..., `riff` provides developers with a service for executing Functions in response to Events. For more details, please see this presentation here link:README.adoc[<LINK TO BE PROVIDED>]
 
 == Key takeaways
 After completing this lab, you will be familiar with the following features:
