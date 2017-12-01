@@ -7,6 +7,14 @@
 *Input*:: names
 *Output*:: greetings
 
+=== Monitor details of `riff's` functions, topics and pods in `minikube`
+Open new shell window or tab and execute this command. We will refer to this as the **__monitoring window__**
+
+[source, bash]
+----
+watch kubectl get deployments,pods,functions,topics
+----
+
 === Delete the function
 This allows you to start from scratch in case someone has already completed this lab
 
@@ -21,16 +29,19 @@ pushd samples/java/greeter/ ; ./mvnw clean package ; popd
 ```
 
 === Build the Docker container for the function code
+Here is the supporting link:Dockerfile[Dockerfile]
 
 ```
 ./riff build -n greeter -v v0001 -f samples/java/greeter
 ```
 
 === Create the Function and Topic(s)
+Here is link:greeter.yaml[the YAML file] that creates input and output topics as well as the function
 
 ```
 ./riff apply -f samples/java/greeter
 ```
+Switch to the **__monitoring window__** to check that the function(s) and topic(s) have been created
 
 === Tail the Sidecar Log
 
@@ -38,15 +49,10 @@ pushd samples/java/greeter/ ; ./mvnw clean package ; popd
 while sleep 1; do ./riff logs -n greeter -t; done
 ```
 
-=== Publish a Message
+=== Publish 100 Messages
+Open new shell window or tab and execute this command:
 
 ```
-./publish names World
+./publish names SpringOne 100
 ```
-
-=== Publish 50 Messages
-
-```
-./publish names World 50
-```
-
+Switch to the **__monitoring window__** to check that `greeter`-based pod(s) have been created
