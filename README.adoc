@@ -1,6 +1,6 @@
 = riff is for functions
 
-As announced during Wednesday's keynote at SpringOne, `riff` provides developers with a service for executing Functions in response to Events. Features include: Event streaming, Polyglot and Kubernetes-native. For more details, please see this presentation here <LINK TO BE PROVIDED AFTER WEDNESDAY KEYNOTE>
+As announced during Wednesday's keynote at SpringOne, `riff` provides developers with a service for executing Functions in response to Events. Features include: Event streaming, Polyglot and Kubernetes-native. For more details, please see this presentation here link:README.adoc[<LINK TO BE PROVIDED AFTER WEDNESDAY KEYNOTE>]
 
 == Key takeaways
 After completing this lab, you will be familiar with the following features:
@@ -82,6 +82,14 @@ helm delete demo --purge
 ----
 
 
-== [[samples]]Try Some Samples
+== [[samples]]Labs
 
-With riff running try some of the link:samples/README.adoc[samples].
+Once you get `riff` running, you can try one or more of the following functions:
+
+* HTTP
+  - link:java/greeter/README.adoc[greeter: Java function]
+  - link:node/square/README.adoc[square: NodeJS function]
+* gRPC
+  - link:python/uppercase/README.adoc[uppercase: Python function]
+* stdio
+  - link:shell/echo/README.adoc[echo: Shell function]
