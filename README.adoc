@@ -27,8 +27,8 @@ For Minikube, we recommend at least 4GB of memory:
 
 [source, bash]
 ----
-eval $(minikube docker-env)
 minikube start --memory=4096
+eval $(minikube docker-env)
 ----
 
 ==== Initialize Helm
