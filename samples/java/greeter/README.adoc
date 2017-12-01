@@ -34,6 +34,7 @@ pushd samples/java/greeter/ ; ./mvnw clean package ; popd
 Here is the supporting link:Dockerfile[Dockerfile]
 
 ```
+eval $(minikube docker-env)
 ./riff build -n greeter -v v0001 -f samples/java/greeter
 ```
 
