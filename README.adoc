@@ -1,3 +1,4 @@
+:imagesdir: .
 = riff is for functions
 
 As announced during ..., `riff` provides developers with a service for executing Functions in response to Events. For more details, please see this presentation here link:README.adoc[<LINK TO BE PROVIDED>]
@@ -10,13 +11,13 @@ After completing this lab, you will be familiar with the following `riff's` feat
 * **Event streaming**: How to pubish messages to `riff's` Kafka broker from the outside world
 * **Scalability**: Scale from 0 to 1, from 1 to N and, eventually, back to 0
 
-== Before we start
+== Getting started
 
 ==== Clone this Github repo
 
 [source, bash]
 ----
-git clone https://github.com/Pivotal-Field-Engineering/riff-in-a-nutshell.git
+git clone https://github.com/Pivotal-Field-Engineering/riff-in-a-nutshell-demo.git
 ----
 
 ==== Run Minikube
@@ -87,7 +88,7 @@ helm delete demo --purge
 ----
 
 ==== Monitor the installation
-Get ready to monitor the `riff` resources that will get created in your cluster. You can see them all using:
+Open a new shell window to monitor the `riff` resources that will get created in your cluster. You can see them all using:
 
 [source, bash]
 ----
@@ -103,6 +104,10 @@ For `NodePort` service types (e.g. running on Minikube) configure the httpGatewa
 helm install riffrepo/riff --name demo --set httpGateway.service.type=NodePort
 ----
 
+== Before proceeding with the Labs
+Wait for all `riff's` pods to change to RUNNING status as described below:
+
+image::riff_pods_running.png[riff,410,240]
 
 == [[samples]]Labs
 
