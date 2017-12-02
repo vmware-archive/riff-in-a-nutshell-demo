@@ -2,10 +2,10 @@
 
 As announced during ..., `riff` provides developers with a service for executing Functions in response to Events. For more details, please see this presentation here link:README.adoc[<LINK TO BE PROVIDED>]
 
-== Key takeaways
-After completing this lab, you will be familiar with the following features:
+== riff demo's key takeaways
+After completing this lab, you will be familiar with the following `riff's` features:
 
-* **Portable & Kubernetes-native**: How to get `riff` up and running locally using `minikube`. To get `riff` running on any Kubernetes cluster either on-premise or in the cloud, please visit: link:https://github.com/projectriff/riff[`riff's` Github repo]
+* **Portability & Kubernetes-native support**: How to get `riff` up and running locally using `minikube`. To get `riff` running on any Kubernetes cluster either on-premise or in the cloud, please visit: link:https://github.com/projectriff/riff[`riff's` Github repo]
 * **Polyglot**: How to deploy functions written in Java, NodeJS, Python and Shell. Said functions can support HTTP, gRPC or stdio
 * **Event streaming**: How to pubish messages to `riff's` Kafka broker from the outside world
 * **Scalability**: Scale from 0 to 1, from 1 to N and, eventually, back to 0
