@@ -10,7 +10,7 @@ After completing this lab, you will be familiar with the following features:
 * **Event streaming**: How to pubish messages to `riff's` Kafka broker from the outside world
 * **Scalability**: Scale from 0 to 1, from 1 to N and, eventually, back to 0
 
-== Initial setup: Do this only once
+== Before we start
 
 ==== Clone this Github repo
 
@@ -19,15 +19,29 @@ After completing this lab, you will be familiar with the following features:
 git clone https://github.com/Pivotal-Field-Engineering/riff-in-a-nutshell.git
 ----
 
-==== Start Minikube
+==== Run Minikube
+
+Check whether Minikube is running or not:
+
+[source, bash]
+----
+minikube status
+----
+
+If Minikube is not running, execute the following command to run it. We recommend at least 4GB of memory:
 
 CAUTION: There have been some DNS issues reported for Minikube v0.24, we suggest using v0.23 until this has been resolved
-
-For Minikube, we recommend at least 4GB of memory:
 
 [source, bash]
 ----
 minikube start --memory=4096
+----
+
+===== Ensure you are pointing to Minikube's cluster
+
+[source, bash]
+----
+kubectl config use-context minikube
 ----
 
 ==== Initialize Helm
