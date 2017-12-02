@@ -49,6 +49,6 @@ while sleep 1; do ./riff logs -n echo -t; done
 === Publish a Message to the Input Topic
 
 ```
-./publish greetings hello
+./publish greetings SpringOneRocks
 ```
 
