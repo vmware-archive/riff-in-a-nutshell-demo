@@ -4,7 +4,7 @@ Click on the link below to view the function code:
 
 [horizontal]
 *Language*:: Python
-*Function*:: https://github.com/projectriff/riff/blob/master/samples/python/uppercase/py/func.py[func.py]
+*Function*:: link:py/func.py[func.py]
 *Protocol*:: gRPC
 *Input*:: greetings
 
