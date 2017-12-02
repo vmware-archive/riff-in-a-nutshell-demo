@@ -4,7 +4,7 @@ Click on the link below to view the function code:
 
 [horizontal]
 *Language*:: JavaScript
-*Function*:: https://github.com/projectriff/riff/blob/master/samples/node/square/square.js[square.js]
+*Function*:: link:square.js[square.js]
 *Protocol*:: HTTP
 *Input*:: numbers
 
