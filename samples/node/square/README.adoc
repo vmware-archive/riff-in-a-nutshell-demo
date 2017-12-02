@@ -48,6 +48,6 @@ while sleep 1; do ./riff logs -n square -t; done
 Open new shell window or tab and execute this command:
 
 ```
-./request numbers 2
+./request numbers 2484.87
 ```
 Switch to the **__monitoring window__** to check that `square`-based pod(s) have been created
