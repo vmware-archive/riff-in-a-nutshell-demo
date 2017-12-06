@@ -1,7 +1,7 @@
 :imagesdir: .
 = riff is for functions
 
-As announced during ..., `riff` provides developers with a service for executing Functions in response to Events. For more details, please see this presentation here link:README.adoc[<LINK TO BE PROVIDED>]
+As announced during Wednesday's SpringOne keynote, `riff` provides developers with a service for executing Functions in response to Events.
 
 == riff demo's key takeaways
 After completing this lab, you will be familiar with the following `riff's` features:
@@ -12,6 +12,12 @@ After completing this lab, you will be familiar with the following `riff's` feat
 * **Scalability**: Scale from 0 to 1, from 1 to N and, eventually, back to 0
 
 == Getting started
+
+==== Pre-requisites
+
+__Required:__ link:https://storage.googleapis.com/minikube/releases/v0.23.0/minikube-darwin-amd64[Minikube v0.23.0], link:http://download.virtualbox.org/virtualbox/5.2.2/VirtualBox-5.2.2-119230-OSX.dmg[VirtualBox 5.2.2], link:https://download.docker.com/mac/stable/Docker.dmg[Docker community edition v17.09.x] and link:https://kubernetes-helm.storage.googleapis.com/helm-v2.7.2-darwin-amd64.tar.gz[Helm v2.7.2]
+
+__Optional:__ link:http://osxdaily.com/2010/08/22/install-watch-command-on-os-x/[`watch` command line utility]
 
 ==== Clone this Github repo
 
